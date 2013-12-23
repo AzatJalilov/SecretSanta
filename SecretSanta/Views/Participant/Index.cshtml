@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<SecretSanta.Models.ParticipantModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="current">
+    <h2>Уже с нами</h2>
+
+    <p>
+        @Html.ActionLink("Хочу участвовать", "Create")
+    </p>
+    <table class="table">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
